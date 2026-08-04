@@ -158,30 +158,8 @@
             </a>
         </div>
 
-    <div class="donation-board-grid">
-        <!-- Student Need 1 -->
-        <div class="donor-card">
-            <span class="status-badge">Verified ✅</span>
-            <h4>Books for Class 10 Student</h4>
-            <p class="location-tag">📍 Haldwani, Uttarakhand</p>
-            <p class="items-needed">Needs: Complete NCERT Books Set</p>
-            <!-- Add the actual Amazon Wishlist share link in the data-link attribute below -->
-            <button class="direct-gift-btn" data-link="https://amazon.in">
-                Gift Directly via Amazon
-            </button>
-        </div>
-
-        <!-- Student Need 2 -->
-        <div class="donor-card">
-            <span class="status-badge">Verified ✅</span>
-            <h4>School Uniform & Shoes</h4>
-            <p class="location-tag">📍 Almora, Uttarakhand</p>
-            <p class="items-needed">Needs: Size 5 Uniform & Winter Jacket</p>
-            <!-- Add the second Amazon Wishlist share link here -->
-            <button class="direct-gift-btn" data-link="https://amazon.in">
-                Gift Directly via Amazon
-            </button>
-        </div>
+    <div class="donation-board-grid" id="donation-board-grid">
+        
     </div>
 </div>
 
@@ -249,11 +227,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     <script>
     // 1. Paste your copied Google Sheet share link inside the quotes below
-    const sheetUrl = "PASTE_YOUR_GOOGLE_SHEET_SHARE_LINK_HERE"; 
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/1ijtgeFxxBxjDElA9dWDeDB8dg_BWfFd0ejIvGjoC6Lc/edit?usp=sharing"; 
     
-    if (sheetUrl && sheetUrl !== "PASTE_YOUR_GOOGLE_SHEET_SHARE_LINK_HERE") {
+    if (sheetUrl) {
         const baseId = sheetUrl.split('/d/')[1].split('/')[0];
-        const csvUrl = `https://google.com{baseId}/gviz/tq?tqx=out:csv`;
+        const csvUrl = `https://docs.google.com/spreadsheets/d/${baseId}/gviz/tq?tqx=out:csv`;
 
         fetch(csvUrl)
             .then(res => res.text())
@@ -271,21 +249,28 @@ document.addEventListener("DOMContentLoaded", function() {
                         let title = "Student Support Request";
                         let location = "India-wide Assistance";
                         let needs = "Educational/Medical Essentials";
-                        let amazonLink = "https://amazon.in"; // Default link if not yet updated
+                        let amazonLink = columns[14] || "https://amazon.in";
+                        let currentStatus = columns[15] ? columns[15].trim() : "";
+                        
 
                         // CHECK PATHWAY: Is it submitted by a Student/Family or a Volunteer?
-                        const isStudent = columns[1] && columns[1].toLowerCase().includes("student");
+                    if (currentStatus.toLowerCase() === 'verified') {
+
+                        const isStudent = columns[1] && columns[1].toLowerCase().includes("family");
+
 
                         if (isStudent) {
                             // Student Pathway Data mapping
-                            title = columns[2] ? `Support for ${columns[2]}` : title;
-                            location = columns[3] || location;
-                            needs = columns[5] || needs;
+                                        title = "Support for Student"; 
+                                        location = columns[3] || location;
+                                        needs = columns[5] || needs;
+
                         } else {
                             // Volunteer/Proxy Pathway Data mapping
-                            title = columns[10] ? `Support for ${columns[10]}` : title;
-                            location = columns[11] || location;
-                            needs = columns[12] || needs;
+                                title = "Support for Student"; 
+                                location = columns[11] || location;
+                                needs = columns[12] || needs;
+
                         }
 
                         // Render your authentic donor card HTML layout natively
@@ -300,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </button>
                             </div>
                         `;
-                        gridContainer.insertAdjacentHTML('beforeend', cardHtml);
+                        gridContainer.insertAdjacentHTML('beforeend', cardHtml);}
                     });
                 }
             })
