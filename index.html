@@ -151,6 +151,13 @@
     <h3>Direct Giving Board (No Money Transfer Needed) 🎁</h3>
     <p class="direct-sub">[SAMPLE (NOT A REAL DATA)] Choose a verified student request below and send help directly via Amazon fulfillment.</p>
     
+            <div class="student-apply-inline-banner">
+            <p>Are you a student in need of educational/medical support, or a volunteer helping one?</p>
+            <a href="https://forms.gle/vjA5gakqg9aqD3rs6" target="_blank" class="inline-apply-btn">
+                📋 Click Here to Request Help
+            </a>
+        </div>
+
     <div class="donation-board-grid">
         <!-- Student Need 1 -->
         <div class="donor-card">
@@ -239,5 +246,67 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
     </script>
+
+    <script>
+    // 1. Paste your copied Google Sheet share link inside the quotes below
+    const sheetUrl = "PASTE_YOUR_GOOGLE_SHEET_SHARE_LINK_HERE"; 
+    
+    if (sheetUrl && sheetUrl !== "PASTE_YOUR_GOOGLE_SHEET_SHARE_LINK_HERE") {
+        const baseId = sheetUrl.split('/d/')[1].split('/')[0];
+        const csvUrl = `https://google.com{baseId}/gviz/tq?tqx=out:csv`;
+
+        fetch(csvUrl)
+            .then(res => res.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').filter(row => row.trim() !== '').slice(1);
+                const gridContainer = document.getElementById('donation-board-grid');
+                
+                if (rows.length > 0) {
+                    gridContainer.innerHTML = ''; // Clears static sample view templates
+
+                    rows.forEach(row => {
+                        const columns = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(col => col.replace(/^"|"$/g, '').trim());
+                        
+                        // Default variables
+                        let title = "Student Support Request";
+                        let location = "India-wide Assistance";
+                        let needs = "Educational/Medical Essentials";
+                        let amazonLink = "https://amazon.in"; // Default link if not yet updated
+
+                        // CHECK PATHWAY: Is it submitted by a Student/Family or a Volunteer?
+                        const isStudent = columns[1] && columns[1].toLowerCase().includes("student");
+
+                        if (isStudent) {
+                            // Student Pathway Data mapping
+                            title = columns[2] ? `Support for ${columns[2]}` : title;
+                            location = columns[3] || location;
+                            needs = columns[5] || needs;
+                        } else {
+                            // Volunteer/Proxy Pathway Data mapping
+                            title = columns[10] ? `Support for ${columns[10]}` : title;
+                            location = columns[11] || location;
+                            needs = columns[12] || needs;
+                        }
+
+                        // Render your authentic donor card HTML layout natively
+                        const cardHtml = `
+                            <div class="donor-card">
+                                <span class="status-badge">Verified ✅</span>
+                                <h4>${title}</h4>
+                                <p class="location-tag">📍 ${location}</p>
+                                <p class="items-needed">Needs: ${needs}</p>
+                                <button class="direct-gift-btn" onclick="window.open('${amazonLink}', '_blank')">
+                                    Gift Directly via Amazon
+                                </button>
+                            </div>
+                        `;
+                        gridContainer.insertAdjacentHTML('beforeend', cardHtml);
+                    });
+                }
+            })
+            .catch(err => console.error("Database connection failure:", err));
+    }
+</script>
+
 </body>
 </html>
