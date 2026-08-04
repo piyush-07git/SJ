@@ -1,0 +1,767 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-image: linear-gradient(135deg, rgba(30, 20, 20, 0.55)), url('Sourav Joshi Vlogs.jpeg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    
+    /* Layout styling for full-screen content alignment */
+    height: 100vh; /* Forces the header to fill the exact height of the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Pushes everything to the top */
+    align-items: center;
+    padding-top: 50px; /* Adjust this value to bring the text lower or higher */
+}
+
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Layout container */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Card components */
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.card p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Video adjustments */
+video {
+    border-radius: 8px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* Interactive Buttons */
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.youtube-btn {
+    background-color: #ff0000;
+    color: white;
+}
+
+.youtube-btn:hover {
+    background-color: #cc0000;
+}
+
+.merch-btn {
+    background-color: #111;
+    color: white;
+}
+
+.merch-btn:hover {
+    background-color: #333;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Corporate Sponsorship Section Style */
+.brand-card {
+    background-color: #1e293b;
+    color: white;
+}
+.brand-card h2 { color: white; }
+.brand-card p { color: #cbd5e1; }
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.stat-box {
+    background: rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+.business-btn {
+    background-color: #2563eb;
+    color: white;
+}
+.business-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Fan Art Upload Box Style */
+.fan-art-section {
+    border: 2px dashed #ff4b4b;
+    background: #fff5f5;
+}
+.input-field {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+}
+.file-input {
+    margin-bottom: 15px;
+    display: block;
+    margin: 10px auto;
+}
+.upload-btn {
+    background-color: #ff4b4b;
+    color: white;
+}
+.upload-btn:hover {
+    background-color: #e03a3a;
+}
+
+
+
+
+/* ==========================================
+   FLOATING LOGO INJECTIONS ONLY
+   ========================================== */
+
+/* This anchors the logos to your banner borders */
+header {
+    position: relative !important;
+}
+
+
+/* Sizing and layout for both corner zones */
+.header-corner {
+    position: absolute !important;
+    top: 40px !important;                 
+    width: 75px !important;
+    height: 75px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    z-index: 99 !important;
+}
+
+/* Position coordinate mappings */
+.corner-left {
+    left: 5% !important;
+}
+
+.corner-right {
+    right: 5% !important;
+}
+
+/* Left Illustration Properties */
+.image-logo {
+    background: transparent !important;
+}
+
+.image-logo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;       
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)) !important;
+}
+
+/* Right YouTube Badge Properties */
+.yt-logo {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.yt-logo svg {
+    width: 42px !important;
+    height: 42px !important;
+    fill: #FF0000 !important;            
+}
+
+/* Lift interactive action hover rule */
+.header-corner:hover {
+    transform: translateY(-5px) scale(1.08) !important;
+}
+
+
+/* ==========================================================
+   FORCE LEFT LOGO RESIZING OVERRIDE
+   ========================================================== */
+header .image-logo {
+    width: 100px !important;    /* Forces the cartoon container to grow larger */
+    height: 100px !important;   /* Forces the cartoon container to grow larger */
+    top: 40px !important;      /* Moves it up slightly to balance the alignment */
+    left: 4% !important;       /* Clean spacing from the left screen wall */
+}
+
+header .image-logo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+
+/* ==========================================================
+   BRAND SPONSORSHIP DASHBOARD CARD STYLING
+   ========================================================== */
+
+/* 1. Sets a premium corporate look for the sponsorship box */
+.brand-card {
+    background: #111625 !important; /* Deep modern dark-slate blue */
+    color: #ffffff !important;
+    border-radius: 16px !important;
+    padding: 35px 25px !important;
+    text-align: center !important;
+    box-shadow: 0 10px 30px rgba(17, 22, 37, 0.2) !important;
+}
+
+.brand-card h2 {
+    color: #ffffff !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 25px !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* 2. Sets up a grid layout for his channel metrics */
+.brand-card .stats-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
+    gap: 15px !important;
+    margin-bottom: 30px !important;
+}
+
+/* 3. Turns each individual stat into a clean metric box */
+.brand-card .stat-box {
+    font-size: medium;
+    background: rgba(255, 255, 255, 0.06) !important; /* Translucent glass look */
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    min-width: 140px !important;
+    flex: 1 !important;
+    transition: background 0.3s, transform 0.3s !important;
+}
+
+.brand-card .stat-box:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Styling for the numbers and headers */
+.brand-card .stat-number {
+    font-size: 1.8rem !important;
+    font-weight: bold !important;
+    color: #ff4747 !important; /* Vibrant signature red highlight */
+    margin-bottom: 5px !important;
+}
+
+.brand-card .stat-label {
+    font-size: 0.85rem !important;
+    color: #a0aec0 !important; /* Soft gray for description labels */
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* 4. Custom corporate Call-To-Action Button style */
+.brand-card .download-btn {
+    display: inline-block !important;
+    background: #ffffff !important;
+    color: #111625 !important;
+    padding: 14px 28px !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1) !important;
+    transition: transform 0.2s, background 0.2s !important;
+}
+
+.brand-card .download-btn:hover {
+    background: #f4f6f9 !important;
+    transform: scale(1.03) !important;
+}
+
+/* ==========================================================
+   CONNECT & SUPPORT FOOTER HUB STYLING
+   ========================================================== */
+
+/* 1. Targets the last white card container on your page */
+.card:last-of-type {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    padding: 35px 20px !important;
+    text-align: center !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* 2. Sets up uniform button layouts for both links */
+.card:last-of-type .btn {
+    display: inline-block !important;
+    min-width: 220px !important; /* Forces both buttons to be the exact same width */
+    padding: 14px 28px !important;
+    margin: 10px 8px !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+/* 3. Custom color scheme for the YouTube Main Channel Button */
+.card:last-of-type .youtube-btn,
+.card:last-of-type a[href*="youtube.com"] {
+    background: #FF0000 !important; /* Authentic YouTube Red */
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2) !important;
+}
+
+/* 4. Custom color scheme for the Merchandise Button */
+.card:last-of-type .business-btn,
+.card:last-of-type a[href*="shop"],
+.card:last-of-type a[href*="merch"] {
+    background: #111625 !important; /* Deep corporate slate to match your dashboard card */
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(17, 22, 37, 0.15) !important;
+}
+
+/* 5. Modern lift hover animations for buttons */
+.card:last-of-type .btn:hover {
+    transform: translateY(-3px) !important;
+}
+
+.card:last-of-type .youtube-btn:hover {
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.35) !important;
+}
+
+.card:last-of-type .business-btn:hover {
+    box-shadow: 0 6px 20px rgba(17, 22, 37, 0.3) !important;
+}
+
+/* 6. Professional minimalist designer signature text */
+footer p, 
+.card:last-of-type + p {
+    font-size: 0.85rem !important;
+    color: #a0aec0 !important;
+    text-align: center !important;
+    margin-top: 25px !important;
+    letter-spacing: 0.5px !important;
+}
+
+
+/* ==========================================================
+   EXCLUSIVE PREMIUM QUIZ COMMUNITY CARD
+   ========================================================== */
+
+.quiz-community-card {
+    background: linear-gradient(135deg, #1e1b4b, #311042) !important; /* Deep cosmic premium purple gradient */
+    color: #ffffff !important;
+    border-radius: 16px !important;
+    padding: 35px 25px !important;
+    text-align: center !important;
+    box-shadow: 0 10px 30px rgba(49, 16, 66, 0.3) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    margin-top: 30px !important;
+}
+
+.quiz-community-card h2 {
+    color: #fff !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 10px !important;
+}
+
+.community-tagline {
+    color: #cbd5e1 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 25px !important;
+}
+
+/* Perks list alignment */
+.perks-list {
+    text-align: left !important;
+    max-width: 500px !important;
+    margin: 0 auto 30px auto !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.perk-item {
+    font-size: 0.95rem !important;
+    margin-bottom: 12px !important;
+    color: #f1f5f9 !important;
+}
+
+.perk-item:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Eye-catching pulsing premium golden/orange join button */
+.community-join-btn {
+    display: inline-block !important;
+    background: linear-gradient(90deg, #f59e0b, #ef4444) !important; /* Vibrant gold to intense red gradient */
+    color: #ffffff !important;
+    padding: 15px 35px !important;
+    border-radius: 30px !important;
+    font-weight: bold !important;
+    font-size: 1.05rem !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.community-join-btn:hover {
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 6px 25px rgba(245, 158, 11, 0.5) !important;
+}
+
+/* ==========================================================
+   INTERACTIVE MINI-QUIZ INTERFACE STYLING
+   ========================================================== */
+.quiz-preview-box {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px dashed rgba(255, 255, 255, 0.15) !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    margin: 0 auto 25px auto !important;
+    text-align: left !important;
+    max-width: 500px !important;
+}
+
+.quiz-question {
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 15px !important;
+}
+
+.quiz-options {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.option-btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    font-size: 0.9rem !important;
+    text-align: left !important;
+    transition: all 0.2s ease !important;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    transform: translateX(4px) !important;
+}
+
+#quiz-feedback-text {
+    margin-top: 15px !important;
+    font-weight: bold !important;
+    font-size: 0.95rem !important;
+    text-align: center !important;
+}
+
+
+/* ==========================================================================
+   ISOLATED RESPONSIVE MOBILE FIXES ONLY (Desktop View Remains 100% Untouched)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* --- 1. HEADER TEXT WRAPPING & LOGO SPACING FIXES --- */
+    header h1 {
+        font-size: 1.55rem !important;     /* Reduces text scaling to fit small viewports */
+        margin-top: 60px !important;       /* Shifts the text column safely below corner logos */
+        max-width: 60% !important;         /* Restricts text area to the center 60% of the screen */
+        margin-left: auto !important;      /* Centers the text layout column alignment */
+        margin-right: auto !important;     /* Centers the text column alignment */
+        line-height: 1.3 !important;       /* Balanced spacing between wrapped font lines */
+    }
+    
+    header p {
+        font-size: 0.8rem !important;
+        max-width: 75% !important;         /* Keeps the sub-tagline aligned in the center */
+        margin: 6px auto 0 auto !important;
+    }
+
+    header .image-logo {
+        width: 52px !important;
+        height: 52px !important;
+        top: 15px !important;
+        left: 15px !important;            /* Pins illustration safely away from the text track */
+    }
+
+    header .yt-logo {
+        width: 52px !important;
+        height: 52px !important;
+        top: 15px !important;
+        right: 15px !important;           /* Pins YouTube logo safely away from the text track */
+    }
+
+    header .yt-logo svg {
+        width: 26px !important;
+        height: 26px !important;
+    }
+
+    /* --- 2. CORPORATE DASHBOARD DATA CLIPPING FIXES --- */
+    .brand-card .stats-container,
+    .stats-row,
+    .card .stats-container {
+        display: flex !important;
+        flex-direction: column !important; /* Stack stats vertically instead of cramming them sideways */
+        gap: 12px !important;              /* Clean layout separation between individual stats */
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .brand-card .stat-box,
+    .stat-box,
+    .stats-row .stat-box {
+        width: 100% !important;            /* Forces each stat box to stretch neatly to full width */
+        min-width: unset !important;       /* Breaks the desktop minimum horizontal size rule */
+        max-width: 280px !important;       /* Keeps boxes uniformly sized and beautiful */
+        padding: 15px !important;          /* Perfect breathing padding inside the stacked cubes */
+    }
+}
+
+    /* 3. RESCUE THE CORPORATE CARD FROM CLIPPING (STACK THEM VERTICALLY ON PHONES) */
+    .brand-card div[style*="display: flex"],
+    .brand-card .stats-container,
+    .stats-row,
+    .card div[class*="stats"] {
+        display: flex !important;
+        flex-direction: column !important; /* Changes row to a column layout on smartphones */
+        gap: 12px !important;              /* Clean layout separation between individual stats */
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    /* Standardizes individual metric boxes to stack elegantly */
+    .brand-card .stat-box,
+    .stat-box,
+    .stats-row .stat-box,
+    .brand-card div[style*="display: flex"] > div,
+    .card div[class*="stats"] > div {
+        width: 100% !important;            /* Forces each stat box to span neatly across mobile bounds */
+        min-width: unset !important;       /* Overrides hard desktop minimum sizes */
+        max-width: 280px !important;       /* Keeps boxes uniformly sized and beautiful */
+        padding: 15px !important;          /* Perfect interior breathing padding */
+        display: block !important;
+        box-sizing: border-box !important;
+    }
+
+
+/* ==========================================================================
+   📱 EXTRA BREATHING ROOM FOR NARROW SMARTPHONES (500px and down)
+   ========================================================================== */
+@media screen and (max-width: 500px) {
+
+    /* 1. Header Heading Optimization */
+    header h1,
+    html body header h1 {
+        font-size: 1.35rem; 
+        margin-top: 85px;             /* Increased to safely push text completely below the logos */
+        max-width: 280px;             /* Forces the text to break into clean, readable lines */
+        white-space: normal;          /* Permits natural text wrapping */
+        margin-left: auto;
+        margin-right: auto;           /* Perfect horizontal centering layout */
+        line-height: 1.3;             /* Clear spacing between text lines */
+        display: block;
+    }
+    
+    /* 2. Header Paragraph Subtitle Optimization */
+    header p,
+    html body header p {
+        font-size: 0.75rem;
+        max-width: 240px;             /* Keeps the tagline wrapped cleanly in the center */
+        margin: 8px auto 0 auto;
+    }
+
+    /* 3. Left Cartoon Logo Fix (Typo Corrected) */
+    header .image-logo,
+    html body header .image-logo {
+        width: 48px;
+        height: 48px;
+        top: 15px;
+        left: 12px;                   /* Pins the cartoon illustration safely away from text */
+    }
+
+    /* 4. Right YouTube Logo Fix */
+    header .yt-logo,
+    html body header .yt-logo {
+        width: 48px;
+        height: 48px;
+        top: 15px;
+        right: 12px;                  /* Pins the YouTube logo icon safely away from text */
+    }
+
+    /* 5. Inner YouTube SVG Vector Alignment */
+    header .yt-logo svg {
+        width: 24px;
+        height: 24px;                 /* Crisp inner vector layout scaling */
+    }
+}
+
+
+
+
+/* 1. This creates the professional main background box for the whole section */
+.direct-help-section {
+    background: #1c2333 !important;             /* Premium dark slate background panel color */
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 16px !important;              /* Smooth elegant rounded corners */
+    padding: 35px 25px !important;              /* Inner padding space for elements inside */
+    text-align: center !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    
+    /* 🌟 ADD CLEAN SEPARATION SPACE ABOVE AND BELOW 🌟 */
+    margin-top: 50px !important;                /* Adds healthy breathing space with the upper section */
+    margin-bottom: 50px !important;             /* Adds healthy breathing space with the lower section */
+}
+
+/* 2. Fixes text colors for headings and subtitles to pop beautifully */
+.direct-help-section h3 {
+    color: #ffffff !important;                  /* Crisp bright white text color */
+    font-size: 1.35rem !important;
+    margin-bottom: 6px !important;
+}
+
+.direct-sub {
+    color: #94a3b8 !important;                  /* Muted clean silver-grey text color */
+    font-size: 0.88rem !important;
+    margin-bottom: 25px !important;
+}
+
+/* 3. Keeps the interactive cards organized horizontally */
+.donation-board-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+}
+
+/* 4. Fixes the inner card content colors completely */
+.donor-card {
+    background: #111625 !important;             /* Darker navy contrast panel tint */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    text-align: left !important;
+    min-width: 260px !important;
+    max-width: 360px !important;
+    flex: 1 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 5. Makes all inner text segments inside the cards crisp and bright */
+.donor-card h4 {
+    color: #ffffff !important;                  /* Bold crisp white title string */
+    font-size: 1.05rem !important;
+    margin-bottom: 6px !important;
+}
+
+.donor-card p, 
+.donor-card .location-tag, 
+.donor-card .items-needed {
+    color: #e2e8f0 !important;                  /* Perfectly readable soft white-grey tone */
+    font-size: 0.88rem !important;
+    margin: 5px 0 !important;
+}
+
+/* 6. Professional action pill button mechanics */
+.direct-gift-btn {
+    display: block !important;
+    width: auto !important;
+    margin: 15px auto 0 auto !important;
+    background: #ff9800 !important;             /* Amazon brand orange highlight token */
+    color: #111625 !important;
+    text-align: center !important;
+    padding: 10px 24px !important;
+    border-radius: 30px !important;             /* Clean premium pill outline shape */
+    font-size: 0.85rem !important;
+    font-weight: bold !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.direct-gift-btn:hover {
+    background: #e68a00 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3) !important;
+}
+
+/* 🌟 MAKES THE VERIFIED BADGE TEXT POP BRIGHTLY 🌟 */
+.donor-card .status-badge {
+    color: #4ade80 !important;          /* Crisp bright neon green text color */
+    font-weight: bold !important;       /* Makes it clearly visible and readable */
+    font-size: 0.8rem !important;
+}
+
+
+
+.vlog-iframe-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;    /* Maintains perfect video shape */
+    border: none;
+}

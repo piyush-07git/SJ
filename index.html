@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourav Joshi Vlogs - Official Fan Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+<header>
+    <!-- Left Corner: Custom Sourav Joshi Avatar Logo Illustration -->
+    <div class="header-corner corner-left image-logo">
+        <img src="Sourav Joshi pic.png" alt="Sourav Joshi Official Logo">
+    </div>
+
+    <!-- Right Corner: Authentic YouTube Brand Logo Badge -->
+    <div class="header-corner corner-right yt-logo">
+        <svg xmlns="http://w3.org" viewBox="0 0 576 512">
+            <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
+        </svg>
+    </div>
+
+    <!-- Your exact original banner content remains untouched -->
+    <h1>Sourav Joshi Vlogs</h1>
+    <p>Official Fan Hub & Creator Community</p>
+    <img src="image.png" alt="Sourav Joshi Profile" class="profile-img">
+</header>
+
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Video Section -->
+        <div class="card">
+            <h2>Daily Exclusive Vlog🎬</h2>
+            <p>Missed the latest daily vlog? Watch out here!</p>
+            <!-- 1. The Video Player Container -->
+<div class="vlog-iframe-wrapper">
+    <iframe 
+        id="auto-latest-vlog"
+        width="100%" 
+        height="400"
+        src="" 
+        title="Sourav Joshi Vlogs - Latest Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+<!-- 2. The Auto-Updating JavaScript Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sourav Joshi's official Channel ID
+        const channelId = "UCjvgGbPPn-FgYeguc5nxG4A"; 
+        
+        // This free converter safely changes YouTube's update feed into clean code
+        const proxyApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+
+        fetch(proxyApiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.items && data.items.length > 0) {
+                    // Grab the link of his newest daily vlog upload
+                    const latestVideoLink = data.items[0].link;
+                    
+                    // Extract the unique video ID code from that link
+                    const videoId = latestVideoLink.split('v=')[1];
+                    
+                    // Inject the video ID straight into your video player container
+                    document.getElementById('auto-latest-vlog').src = `https://www.youtube.com/embed/${videoId}`;
+                }
+            })
+            .catch(error => {
+                console.error("Loading backup vlog:", error);
+                // Fallback video if the automated service ever faces server delays
+                document.getElementById("auto-latest-vlog").src = "https://www.youtube.com/embed/${videoId}";
+            });
+    });
+</script>
+
+        </div>
+
+
+                <!-- Brand Sponsorship Box -->
+        <div class="card brand-card">
+            <h2>For Corporate Brand Collaborations 📈</h2>
+            <p>Direct audience insights for official sponsors and marketing agencies:</p>
+            
+            <div class="stats-row">
+                <div class="stat-box"><strong>41M+</strong><br>Subscribers</div>
+                <div class="stat-box"><strong>400M+</strong><br>Monthly Views</div>
+                <div class="stat-box"><strong>85%</strong><br>Youth Audience</div>
+            </div>
+            
+            <a href="#" class="btn business-btn">Download Official Media Kit (PDF)</a>
+        </div>
+
+
+
+        <!-- Exclusive Paid Community Hub Section -->
+        <div class="card quiz-community-card">
+            <h2>Join the VIP Superfan Club! 🏆</h2>
+            <p class="community-tagline">Play daily vlog quizzes, win real rewards, and get entered into monthly lucky draws!</p>
+            
+            <div class="perks-list">
+                <div class="perk-item">🧠 <b>Weekly Vlog Trivia:</b> Test your knowledge & win cash prizes.</div>
+                <div class="perk-item">🎁 <b>Automated Lucky Draw:</b> Monthly random member rewards.</div>
+                <div class="perk-item">💬 <b>VIP Chat Space:</b> Connect directly with the ultimate fan community.</div>
+            </div>
+
+
+            
+                        <!-- Interactive Demo Quiz App Component -->
+            <div class="quiz-preview-box">
+                <p class="quiz-question">💡 <b>Sample Fan Quiz:</b> What color shirt was Sourav wearing 4 minutes into Tuesday's vlog?</p>
+                <div class="quiz-options">
+                    <button type="button" class="option-btn" onclick="checkAnswer(false, this)">🔴 Bright Red</button>
+                    <button type="button" class="option-btn" onclick="checkAnswer(true, this)">🟡 Classic Yellow</button>
+                    <button type="button" class="option-btn" onclick="checkAnswer(false, this)">🟢 Emerald Green</button>
+                </div>
+                <p id="quiz-feedback-text"></p>
+            </div>
+
+
+
+            <!-- The Gateway Button (Replace link with your Cosmofeed/Razorpay link later) -->
+            <a href="#" target="_blank" class="btn community-join-btn">Unlock VIP Access (₹199/month)</a>
+        </div>
+
+        <!-- Fan Art Gallery Section -->
+        <div class="card fan-art-section">
+            <h2>Submit Your Fan Art & Sketches! 🎨</h2>
+            <p>Sourav reviews top sketches live on the daily vlogs. Upload your drawing below!</p>
+            
+            <form class="upload-form" onsubmit="event.preventDefault(); alert('Sample Upload Successful!');">
+                <input type="text" placeholder="Your Name" required class="input-field">
+                <input type="file" accept="image/*" required class="file-input">
+                <button type="submit" class="btn upload-btn">Upload to Fan Gallery</button>
+            </form>
+        </div>
+
+
+        <!-- ==========================================
+     🤝 LIVE DIRECT HELP OPPORTUNITIES (FUNCTIONAL)
+     ========================================== -->
+<div class="direct-help-section">
+    <h3>Direct Giving Board (No Money Transfer Needed) 🎁</h3>
+    <p class="direct-sub">[SAMPLE (NOT A REAL DATA)] Choose a verified student request below and send help directly via Amazon fulfillment.</p>
+    
+    <div class="donation-board-grid">
+        <!-- Student Need 1 -->
+        <div class="donor-card">
+            <span class="status-badge">Verified ✅</span>
+            <h4>Books for Class 10 Student</h4>
+            <p class="location-tag">📍 Haldwani, Uttarakhand</p>
+            <p class="items-needed">Needs: Complete NCERT Books Set</p>
+            <!-- Add the actual Amazon Wishlist share link in the data-link attribute below -->
+            <button class="direct-gift-btn" data-link="https://amazon.in">
+                Gift Directly via Amazon
+            </button>
+        </div>
+
+        <!-- Student Need 2 -->
+        <div class="donor-card">
+            <span class="status-badge">Verified ✅</span>
+            <h4>School Uniform & Shoes</h4>
+            <p class="location-tag">📍 Almora, Uttarakhand</p>
+            <p class="items-needed">Needs: Size 5 Uniform & Winter Jacket</p>
+            <!-- Add the second Amazon Wishlist share link here -->
+            <button class="direct-gift-btn" data-link="https://amazon.in">
+                Gift Directly via Amazon
+            </button>
+        </div>
+    </div>
+</div>
+
+        <!-- Links Section -->
+        <div class="card">
+            <h2>Connect & Support</h2>
+            <a href="https://www.youtube.com/channel/UCjvgGbPPn-FgYeguc5nxG4A" target="_blank" class="btn youtube-btn">Subscribe on YouTube</a>
+
+
+            <a href="#" class="btn merch-btn">Official Merch (Coming Soon)</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed with ❤️ for the Sourav Joshi Team</p>
+    </footer>
+
+
+        <script>
+    function checkAnswer(isCorrect, element) {
+        const feedback = document.getElementById("quiz-feedback-text");
+        const allButtons = document.querySelectorAll(".option-btn");
+        
+        // Disable all choices instantly to prevent double clicking
+        allButtons.forEach(btn => btn.disabled = true);
+        
+        if (isCorrect) {
+            element.style.background = "#22c55e"; // Success green
+            element.style.borderColor = "#22c55e";
+            feedback.innerHTML = "🎉 Correct! You locked in the fastest response time of 2.4s!";
+            feedback.style.color = "#22c55e";
+        } else {
+            element.style.background = "#ef4444"; // Error red
+            element.style.borderColor = "#ef4444";
+            feedback.innerHTML = "❌ Incorrect! Check the 4:12 timestamp in Tuesday's vlog.";
+            feedback.style.color = "#ef4444";
+        }
+    }
+
+    // Wait for the full web application interface to load
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Select all direct gifting action buttons on the board
+    const giftButtons = document.querySelectorAll('.direct-gift-btn');
+    
+    // Loop through each button element and attach an active event listener
+    giftButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Retrieve the custom Amazon URL bound to the specific card data layer
+            const targetAmazonLink = this.getAttribute('data-link');
+            
+            if (targetAmazonLink && targetAmazonLink !== "#") {
+                // Safely launch the external checkout screen in a fresh separate browser tab
+                window.open(targetAmazonLink, '_blank');
+            } else {
+                alert("This specific verification list is currently being updated by the team. Please try again in a few moments!");
+            }
+        });
+    });
+    
+});
+    </script>
+</body>
+</html>
