@@ -6,22 +6,6 @@
     <title>Sourav Joshi Vlogs - Official Fan Hub</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
-    <style>
-.vlog-iframe-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.vlog-iframe-wrapper iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  display: block;
-}
-</style>
-
 </head>
 <body>
 
@@ -55,12 +39,15 @@
             <p>Missed the latest daily vlog? Watch out here!</p>
             <!-- 1. The Video Player Container -->
 <div class="vlog-iframe-wrapper">
-    <iframe id="auto-latest-vlog"
-            src="" 
-            title="Sourav Joshi Vlogs - Latest Video" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
+    <iframe 
+        id="auto-latest-vlog"
+        width="100%" 
+        height="400"
+        src="" 
+        title="Sourav Joshi Vlogs - Latest Video" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
     </iframe>
 </div>
 
