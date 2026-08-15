@@ -527,11 +527,17 @@ footer p,
     /* --- 1. HEADER TEXT WRAPPING & LOGO SPACING FIXES --- */
     header h1 {
         font-size: 1.55rem !important;     /* Reduces text scaling to fit small viewports */
-        margin-top: 60px !important;       /* Shifts the text column safely below corner logos */
+        margin-top: 0px !important;       /* Shifts the text column safely below corner logos */
         max-width: 60% !important;         /* Restricts text area to the center 60% of the screen */
         margin-left: auto !important;      /* Centers the text layout column alignment */
         margin-right: auto !important;     /* Centers the text column alignment */
         line-height: 1.3 !important;       /* Balanced spacing between wrapped font lines */
+    }
+
+    header .profile-img {
+        width: 100px !important;            /* Reduces the profile image size for smaller screens */
+        height: 100px !important;           /* Reduces the profile image size for smaller screens */
+        margin-top: 10px !important;        /* Adjusts spacing above the profile image */
     }
     
     header p {
