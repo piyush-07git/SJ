@@ -45,7 +45,6 @@
     <img src="image.png" alt="Sourav Joshi Profile" class="profile-img">
 </header>
 
-
     <!-- Main Content -->
     <div class="container">
 
@@ -66,37 +65,18 @@
 
 <!-- 2. The Auto-Updating JavaScript Script -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Sourav Joshi's official Channel ID
-        const channelId = "UCjvgGbPPn-FgYeguc5nxG4A"; 
-        
-        // This free converter safely changes YouTube's update feed into clean code
-        const proxyApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
-
-        fetch(proxyApiUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.items && data.items.length > 0) {
-                    // Grab the link of his newest daily vlog upload
-                    const latestVideoLink = data.items[0].link;
-                    
-                    // Extract the unique video ID code from that link
-                    const videoId = latestVideoLink.split('v=')[1];
-                    
-                    // Inject the video ID straight into your video player container
-                    document.getElementById('auto-latest-vlog').src = `https://www.youtube.com/embed/${videoId}`;
-                }
-            })
-            .catch(error => {
-                console.error("Loading backup vlog:", error);
-                // Fallback video if the automated service ever faces server delays
-                document.getElementById("auto-latest-vlog").src = "https://www.youtube.com/embed/${videoId}";
-            });
-    });
+document.addEventListener("DOMContentLoaded", function() {
+    // Sourav Joshi's official VLOGS Uploads Playlist ID
+    const playlistId = "UUjvgGbPPn-FgYeguc5nxG4A";
+    
+    // This official YouTube URL always loads his newest daily vlog automatically
+    const autoPlayerUrl = `https://youtube.com/embed/playlist?list=${playlistId}`;
+    
+    // Inject the player straight into your website box
+    document.getElementById('auto-latest-vlog').src = autoPlayerUrl;
+});
 </script>
-
         </div>
-
 
                 <!-- Brand Sponsorship Box -->
         <div class="card brand-card">
@@ -113,7 +93,6 @@
         </div>
 
 
-
         <!-- Exclusive Paid Community Hub Section -->
         <div class="card quiz-community-card">
             <h2>Join the VIP Superfan Club! 🏆</h2>
@@ -125,8 +104,6 @@
                 <div class="perk-item">💬 <b>VIP Chat Space:</b> Connect directly with the ultimate fan community.</div>
             </div>
 
-
-            
                         <!-- Interactive Demo Quiz App Component -->
             <div class="quiz-preview-box">
                 <p class="quiz-question">💡 <b>Sample Fan Quiz:</b> What color shirt was Sourav wearing 4 minutes into Tuesday's vlog?</p>
@@ -137,7 +114,6 @@
                 </div>
                 <p id="quiz-feedback-text"></p>
             </div>
-
 
 
             <!-- The Gateway Button (Replace link with your Cosmofeed/Razorpay link later) -->
