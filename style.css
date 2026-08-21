@@ -717,6 +717,7 @@ footer p,
     max-width: 360px !important;
     flex: 1 !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    border: 1.5px dotted rgba(20, 238, 8, 0.908) !important;
 }
 
 /* 5. Makes all inner text segments inside the cards crisp and bright */
